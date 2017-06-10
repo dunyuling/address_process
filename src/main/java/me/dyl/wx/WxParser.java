@@ -49,11 +49,13 @@ public class WxParser {
                         one = false;
                     }
                     String parent_code = code.substring(0, 4) + "00";
-                    Area area = new Area();
-                    area.setId(code);
-                    area.setName(name);
-                    area.setPid(parent_code);
-                    areas.add(area);
+                    if(!name.equals("市辖区")) {
+                        Area area = new Area();
+                        area.setId(code);
+                        area.setName(name);
+                        area.setPid(parent_code);
+                        areas.add(area);
+                    }
                 }
 
             });

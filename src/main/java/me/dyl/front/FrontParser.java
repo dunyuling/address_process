@@ -41,10 +41,12 @@ public class FrontParser {
                     c_p_code = frontMock.getTempCode();
                     cMap = frontMock.getLevelMap();
                 } else {
-                    String parent_code = code.substring(0, 4) + "00";
-                    FrontMock frontMock = loadFrontMap(a_p_code, parent_code, code, name, aMap, rootMap);
-                    a_p_code = frontMock.getTempCode();
-                    aMap = frontMock.getLevelMap();
+                    if(!name.equals("市辖区")) {
+                        String parent_code = code.substring(0, 4) + "00";
+                        FrontMock frontMock = loadFrontMap(a_p_code, parent_code, code, name, aMap, rootMap);
+                        a_p_code = frontMock.getTempCode();
+                        aMap = frontMock.getLevelMap();
+                    }
                 }
             });
             rootMap.put(c_p_code, cMap);

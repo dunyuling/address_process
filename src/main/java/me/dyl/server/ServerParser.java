@@ -37,8 +37,10 @@ public class ServerParser {
                     cityList.add(adminRanking);
                 } else {
                     String parent_code = code.substring(0, 4) + "00";
-                    adminRanking.setParent_code(parent_code);
-                    areaList.add(adminRanking);
+                    if(!name.trim().equals("市辖区")) {
+                        adminRanking.setParent_code(parent_code);
+                        areaList.add(adminRanking);
+                    }
                 }
             });
             reader.close();

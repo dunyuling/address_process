@@ -9,7 +9,8 @@ import me.dyl.wx.WxParser;
  */
 public class Main {
     public static void main(String[] args) {
-        ServerParser.parse();
+//        ServerParser.parse();
 //        WxParser.parse();
+        FrontParser.parse();
     }
 }
